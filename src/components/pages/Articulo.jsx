@@ -45,9 +45,9 @@ export const Articulo = () => {
           <>
             <div className="jumbo">
               <NavLink to="/articulos" className="boton-volver">Volver</NavLink>
-              <img src={`${config.API_URL}/imagen/${articulo.imagen}`} alt="Imagen" style={{width: "100%", height: "50vh", objectFit: "cover"}}/>
-              <span>Publicado: {formatDate(articulo.fecha)}</span>
+              <img src={`${config.API_URL}/imagen/${articulo.imagen}`} alt="Imagen" style={{width: "100%", height: "50vh", objectFit: "cover", borderRadius: "15px"}}/>
               <h1>{articulo.titulo}</h1>
+              <span className="date-span">{formatDate(articulo.fecha)}</span>
               <p dangerouslySetInnerHTML={{ __html: articulo.contenido }}></p>
             </div>
           </>

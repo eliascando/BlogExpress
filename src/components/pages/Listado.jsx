@@ -8,12 +8,16 @@ export const Listado = ({articulos}) => {
     <div>
         {articulos.map((articulo, index) => (
           <article className="articulo-item" key={index}>
-            <div className="mask">
-              {articulo.imagen && <img src={`${config.API_URL}/imagen/${articulo.imagen}`} alt="Imagen"/>}
-            </div>
-            <div className="datos">
-              <h3 className="title"><Link to={`/articulo/${articulo._id}`}>{articulo.titulo}</Link></h3>
-              <p className="description">{articulo.resumen}</p>
+            <div className="tarjeta-articulo">
+              <Link to={`/articulo/${articulo._id}`} className="link-imagen">
+              <div className="mask">
+                {articulo.imagen && <img src={`${config.API_URL}/imagen/${articulo.imagen}`} alt="Imagen"/>}
+              </div>
+              </Link>
+              <div className="datos">
+                <h3 className="title"><Link to={`/articulo/${articulo._id}`}>{articulo.titulo}</Link></h3>
+                <p className="description">{articulo.resumen}</p>
+              </div>
             </div>
           </article>
         ))}
