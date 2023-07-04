@@ -1,4 +1,4 @@
-import { Rutas } from "./routes/rutas"
+import { Rutas } from "./routes/Rutas"
 import './App.css'
 
 function App() {
