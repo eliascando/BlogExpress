@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
+import { config } from '../../../config'
 
 export const Inicio = () => {
   return (
     <div className="jumbo inicio">
-      <img src="/public/banner.jpg" alt="Banner" className='banner'/>
+      <img src={`${config.API_URL}/imagen/banner.jpg`} alt="Banner" className='banner'/>
       <h1>!Bienvenido!</h1>
       <p>Hola soy Elías, desarrollador web y este es mi Blog, aquí encontrarás artículos sobre programación y de lo que voy descubriendo y aprendiendo en este mundo del software</p>
       <h4>Datos sobre mi:</h4>
