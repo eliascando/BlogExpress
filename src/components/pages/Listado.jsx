@@ -11,7 +11,7 @@ export const Listado = ({articulos}) => {
             <div className="tarjeta-articulo">
               <Link to={`/articulo/${articulo._id}`} className="link-imagen">
               <div className="mask">
-                {articulo.imagen && <img src={`${config.API_URL}/imagen/${articulo.imagen}`} alt="Imagen"/>}
+                {articulo.imagen && <img src={`${config.API_URL}/imagen/${articulo.imagen}`} alt="Imagen" headers={{ apikey: config.API_KEY }}/>}
               </div>
               </Link>
               <div className="datos">
