@@ -1,8 +1,11 @@
 import { useNavigate } from 'react-router-dom';
+import { useContext } from "react"
+import { DarkModeContext } from "../../../DarkModeContext"
 
 export const Search = () => {
 
   const navegar = useNavigate();
+  const { darkMode } = useContext(DarkModeContext);
 
   const buscarArticulo = (e) => {
     e.preventDefault();
@@ -17,7 +20,7 @@ export const Search = () => {
   return (
     <div className="search">
         <form>
-            <input type="text" name="search_field" id="search_field" placeholder="Buscar articulo..." autoComplete='off' onChange={buscarArticulo}/>
+            <input type="text" name="search_field" id={darkMode?'darkSearchField':'lightSearchField'} placeholder="Buscar articulo..." autoComplete='off' onChange={buscarArticulo}/>
         </form>
     </div>
   )

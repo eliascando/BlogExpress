@@ -1,7 +1,6 @@
 import { config }from '../../config';
 
 export const PeticionAPI = async(url, metodo="", datosGuardar=[], archivos = false) => {
-    console.log("entro una peticion");
 
     let cargando = true;
 
@@ -11,7 +10,6 @@ export const PeticionAPI = async(url, metodo="", datosGuardar=[], archivos = fal
             apiKey: config.API_KEY
         }
     }
-    console.log(opciones);
 
     if(metodo === "POST" || metodo === "PUT"){
         if(archivos){
@@ -44,8 +42,6 @@ export const PeticionAPI = async(url, metodo="", datosGuardar=[], archivos = fal
     }
     const resp = await fetch(url, opciones);
     const datos = await resp.json();
-    console.log(opciones);
-    console.log(datos);
 
     cargando = false;
 

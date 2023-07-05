@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom'
 import { config } from '../../../config'
+import { useContext } from "react"
+import { DarkModeContext } from "../../../DarkModeContext"
 
 export const Inicio = () => {
+
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
-    <div className="jumbo inicio">
+    <div className={`jumbo inicio ${darkMode?'dark darkShadow':'light lightShadow'}`}>
       <img src={`${config.API_URL}/imagen/banner.jpg`} alt="Banner" className='banner'/>
       <h1>¡Bienvenido!</h1>
       <p>Hola soy Elías, <strong>desarrollador web</strong> y este es mi Blog, aquí encontrarás artículos sobre programación y de lo que voy descubriendo y aprendiendo en este mundo del software</p>

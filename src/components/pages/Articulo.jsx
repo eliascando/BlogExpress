@@ -3,11 +3,15 @@ import { useState, useEffect } from "react";
 import { config } from "../../../config";
 import { PeticionAPI } from "../../helpers/PeticionAPI";
 import { NavLink, useParams } from "react-router-dom";
+import { useContext } from "react"
+import { DarkModeContext } from "./../../../DarkModeContext"
 
 export const Articulo = () => {
   const [articulo, setArticulo] = useState([]);
   const [cargando, setCargando] = useState(true);
+  const { darkMode } = useContext(DarkModeContext);
   const { id } = useParams();
+
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -26,6 +30,16 @@ export const Articulo = () => {
 
   useEffect(() => {
     conseguirArticulo();
+    //Ocultar el dark-mode-div en esta página
+    const darkModeDiv = document.querySelector(".dark-mode-div");
+    darkModeDiv.style.display = "none";
+    //Ocultar el arrow-up-div cuando se sale de esta página
+    const arrowUpDiv = document.querySelector(".arrow-up-div");
+    arrowUpDiv.style.display = "block";
+    return () => {
+      darkModeDiv.style.display = "block";
+      arrowUpDiv.style.display = "none";
+    }
   }, []);
 
   const conseguirArticulo = async () => {
@@ -43,7 +57,7 @@ export const Articulo = () => {
         : !articulo ? <h1>No se encontró el articulo</h1>
         : (
           <>
-            <div className="jumbo">
+            <div className={`jumbo ${darkMode?'dark darkShadow':'light lightShadow'}`}>
               <NavLink to="/articulos" className="boton-volver">Volver</NavLink>
               <img src={`${config.API_URL}/imagen/${articulo.imagen}`} alt="Imagen" style={{width: "100%", height: "50vh", objectFit: "cover", borderRadius: "15px"}}/>
               <h1>{articulo.titulo}</h1>
