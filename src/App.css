@@ -421,6 +421,7 @@ input[type="text"]{
 .footer{
     border-top: 1px solid white;
     text-align: center;
+    font-size: 14px;
     align-items: center;
     line-height: 50px;
     background: #353333;
