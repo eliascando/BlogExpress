@@ -62,7 +62,7 @@ export const Rutas = () => {
 
             {/*BOTONES FIJOS*/}
             <div className="dark-mode-div fixed-bottom-div">
-                <button onClick={()=>{setDarkMode(!darkMode)}} className="dark-mode-button">{darkMode ? (<i className="bi bi-moon-stars-fill"></i>) : (<i class="bi bi-brightness-high-fill"></i>)}</button>
+                <button onClick={()=>{setDarkMode(!darkMode)}} className="dark-mode-button">{darkMode ? (<i className="bi bi-moon-stars-fill"></i>) : (<i className="bi bi-brightness-high-fill"></i>)}</button>
             </div>
             <div className="arrow-up-div fixed-bottom-div">
                 <button onClick={()=>{scrollToTop()}} className="arrow-up-button">{<i className="bi bi-arrow-up"></i>}</button>

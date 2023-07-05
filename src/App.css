@@ -1,5 +1,5 @@
 /*Estilos generales*/
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Questrial&display=swap');
 
 .dark{
     color: white;
@@ -419,14 +419,13 @@ input[type="text"]{
 
 /*ESTILOS DEL PIE DE PÁGINA*/
 .footer{
-    background: #d1defa;
-    color: #454545;
     border-top: 1px solid white;
     text-align: center;
+    align-items: center;
     line-height: 50px;
-    padding-left: 25px;
-    background: #2c2b2b;
+    background: #353333;
     color: white;
+    font-family: 'Fira Code', monospace;
 }
 
 @media (max-width: 1085px){
