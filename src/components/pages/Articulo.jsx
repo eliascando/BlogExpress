@@ -3,11 +3,15 @@ import { useState, useEffect } from "react";
 import { config } from "../../../config";
 import { PeticionAPI } from "../../helpers/PeticionAPI";
 import { NavLink, useParams } from "react-router-dom";
+import { useContext } from "react"
+import { DarkModeContext } from "./../../../DarkModeContext"
 
 export const Articulo = () => {
   const [articulo, setArticulo] = useState([]);
   const [cargando, setCargando] = useState(true);
+  const { darkMode } = useContext(DarkModeContext);
   const { id } = useParams();
+
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -26,7 +30,27 @@ export const Articulo = () => {
 
   useEffect(() => {
     conseguirArticulo();
+    cargarModo();
+    //Ocultar el dark-mode-div en esta página
+    const darkModeDiv = document.querySelector(".dark-mode-div");
+    darkModeDiv.style.display = "none";
+    //Ocultar el arrow-up-div cuando se sale de esta página
+    const arrowUpDiv = document.querySelector(".arrow-up-div");
+    arrowUpDiv.style.display = "block";
+    return () => {
+      darkModeDiv.style.display = "block";
+      arrowUpDiv.style.display = "none";
+    }
   }, []);
+
+  const cargarModo = () => {
+    const linkElement = document.getElementById('styles-link');
+    if (darkMode) {
+      linkElement.href = '.././src/Dark.css';
+    } else {
+      linkElement.href = '.././src/Light.css';
+    }
+  };
 
   const conseguirArticulo = async () => {
     const URL = `${config.API_URL}/articulo/${id}`;
