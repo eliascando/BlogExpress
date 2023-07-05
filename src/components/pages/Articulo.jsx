@@ -30,7 +30,6 @@ export const Articulo = () => {
 
   useEffect(() => {
     conseguirArticulo();
-    cargarModo();
     //Ocultar el dark-mode-div en esta página
     const darkModeDiv = document.querySelector(".dark-mode-div");
     darkModeDiv.style.display = "none";
@@ -42,15 +41,6 @@ export const Articulo = () => {
       arrowUpDiv.style.display = "none";
     }
   }, []);
-
-  const cargarModo = () => {
-    const linkElement = document.getElementById('styles-link');
-    if (darkMode) {
-      linkElement.href = '.././src/Dark.css';
-    } else {
-      linkElement.href = '.././src/Light.css';
-    }
-  };
 
   const conseguirArticulo = async () => {
     const URL = `${config.API_URL}/articulo/${id}`;
@@ -67,7 +57,7 @@ export const Articulo = () => {
         : !articulo ? <h1>No se encontró el articulo</h1>
         : (
           <>
-            <div className="jumbo">
+            <div className={`jumbo ${darkMode?'dark darkShadow':'light lightShadow'}`}>
               <NavLink to="/articulos" className="boton-volver">Volver</NavLink>
               <img src={`${config.API_URL}/imagen/${articulo.imagen}`} alt="Imagen" style={{width: "100%", height: "50vh", objectFit: "cover", borderRadius: "15px"}}/>
               <h1>{articulo.titulo}</h1>

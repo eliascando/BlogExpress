@@ -1,13 +1,75 @@
 /*Estilos generales*/
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
+.dark{
+    color: white;
+    background-color: #2c2b2b;
+}
+.light{
+    color: #454545;
+    background: #f6f7f9;
+}
+.darkShadow{
+    box-shadow: 0px 0px 6px #0f0f0f;
+}
+.lightShadow{
+    box-shadow: 0px 0px 6px #ddd;
+}
+.lightNav{
+    color: #2c2b2b;
+}
+.darkNav{
+    color: white;
+    font-weight: 100;
+}
+.darkSearch{
+    background: #ffe3e3;
+    color: rgb(0, 0, 0);
+    padding:15px;
+}
+.lightSearch{
+    background: #d8d8d8;
+    color: #454545;
+}
+.darkFormSearch{
+    background: none;
+    color: white;
+}
+#darkSearchField{
+    display: flex;
+    width: 90%;
+    border-radius: 15px;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    font-weight: lighter;
+    text-decoration: none;
+    transition: all 300ms;
+    margin: 0 auto;
+    background: #1d1919;
+    color: white;
+}
+#lightSearchField{
+    display: flex;
+    width: 90%;
+    border-radius: 15px;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    font-weight: lighter;
+    text-decoration: none;
+    transition: all 300ms;
+    margin: 0 auto;
+    background: #d8d8d8;
+    color: #454545;
+}
+
 body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    background: #2c2b2b;
 }
 .layout{
     display: flex;
@@ -15,9 +77,8 @@ body{
     justify-content: flex-start;
     align-items: initial;
     min-height: 100vh;
-    background: #2c2b2b;
 }
-
+/*INICIO*/
 .banner{
     width: 100%;
     height: 40vh;
@@ -42,9 +103,6 @@ body{
     top: 0;
     left: 0;
     z-index: 100;
-    box-shadow: 0px 0px 6px #0f0f0f;
-    background: #2c2b2b;
-    color: white;
 }
 .header h1{
     margin: auto;
@@ -59,7 +117,6 @@ body{
     padding: 0;
     margin: 10px;
     border-radius: 100px;
-
 }
 .arrow-up-div{
     display: none;
@@ -84,10 +141,8 @@ body{
     bottom: 0;
     z-index: 9999;
 }
-
 /*Estilos de barra de navegación*/
 .nav{
-    color: #000000;
     width: 33%;
     text-align: center;
     font-style: bold;
@@ -95,10 +150,8 @@ body{
     justify-content: right;
     align-items: center;
     flex-grow: 0;
-    background: #2c2b2b;
-    color: white;
+    background: none;
 }
-
 .nav > ul{
     display: flex;
     flex-flow: row wrap;
@@ -107,8 +160,6 @@ body{
     list-style: none;
     margin: 0px;
     padding: 0;
-    background: #2c2b2b;
-    color: white;
 }
 .nav a{
     display: block;
@@ -118,8 +169,6 @@ body{
     font-weight: lighter;
     text-decoration: none;
     transition: all 300ms;
-    background: #2c2b2b;
-    color: white;
 }
 .nav a:hover{
     transform: scale(1.2,1.2);
@@ -128,23 +177,18 @@ body{
 .nav li{
     padding: 10px;
 }
-
 .logo{
     font-family: 'Questrial', sans-serif;
     display: flex;
     width: 33%;
     height: 100px;
-    color: white;
 }
 .logo h1 .navlink{
     text-decoration: none;
-    font-weight: 100;
-    color: white;
 }
 .logo h1 .navlink:hover{
     color: #e65136;
 }
-
 .search{
     display: flex;
     justify-content: center;
@@ -160,27 +204,10 @@ body{
     margin-left: 0;
     margin-right: 0;
     text-align: center;
-    background: #2c2b2b;
-    color: white;
 }
-.search #search_field{
-    display: flex;
-    width: 90%;
-    border-radius: 15px;
-    border: 0;
-    outline: 0;
-    font-size: 18px;
-    font-weight: lighter;
-    text-decoration: none;
-    transition: all 300ms;
-    margin: 0 auto;
-    background: #1d1919;
-    color: white;
-}
+
 /*ESTILOS PARA EL CONTENIDO PRINCIPAL*/
 .content{
-    background: #2c2b2b;
-    color: white;
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
@@ -202,9 +229,6 @@ body{
     text-align: left;
     max-height: 20vh;
     display: flex;
-    background: #2c2b2b;
-    color: white;
-    box-shadow: 0px 0px 6px #0f0f0f;
 }
 .tarjeta-articulo{
     display: flex;
@@ -231,7 +255,6 @@ body{
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
 }
-
 .articulo-item .description{
     width: 80%;
     margin-right: 20px;
@@ -245,11 +268,6 @@ body{
     display: -webkit-box;
     -webkit-line-clamp: 4; /* number of lines to show */
     -webkit-box-orient: vertical;
-}
-
-.articulo-item .datos .title a,
-.articulo-item .datos .description{
-    color: white;
 }
 
 .articulo-item .mask{
@@ -270,7 +288,6 @@ body{
 }
 .articulo-item h3 a{
     text-decoration: none;
-    color: #000000;
 }
 .articulo-item h3 a:hover{
     color: #e65136;
@@ -308,16 +325,12 @@ body{
     padding: 50px;
     border-radius: 10px;
     margin: 25px auto;
-    box-shadow: 0px 0px 6px #0f0f0f;
-    background: #2c2b2b;
-    color: white;
 }
 
 .jumbo h1{
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: white;
 }
 
 .jumbo p{
@@ -325,7 +338,6 @@ body{
     margin-bottom: 40px;
     font-size: 18px;
     font-weight: 300;
-    color: white;
 }
 
 .button,
@@ -403,16 +415,6 @@ input[type="text"]{
     height: 10vh;
     resize: none;
     overflow: auto;
-}
-
-.form-group label{
-    display: block;
-    text-align: left;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #454545;
 }
 
 /*ESTILOS DEL PIE DE PÁGINA*/
@@ -509,6 +511,7 @@ input[type="text"]{
     }
 }
 @media (max-width: 765px){
+
     .boton-volver{
         width: 20%;
         font-size: 20px;
@@ -546,6 +549,5 @@ input[type="text"]{
     .tarjeta-articulo .title{
         width: 100%;
         font-size: 30px;
-        color: #454545;
     }
 }

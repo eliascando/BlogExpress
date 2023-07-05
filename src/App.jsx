@@ -2,6 +2,7 @@
 import { Rutas } from "./routes/Rutas"
 import { useEffect, useState } from "react";
 import { DarkModeContext } from "../DarkModeContext";
+import './App.css';
 
 function App() {
 
@@ -12,22 +13,12 @@ function App() {
 
   useEffect(() => {
     //Guardar el estado del darkMode en localStorage
-    cargarModo();
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
     
   }, [darkMode])
 
-  const cargarModo = () => {
-    const linkElement = document.getElementById('styles-link');
-    if (darkMode) {
-      linkElement.href = './src/Dark.css';
-    } else {
-      linkElement.href = './src/Light.css';
-    }
-  };
-
   return (
-    <div className='layout'>
+    <div className={`layout ${darkMode?`dark`:`light`}`}>
       <DarkModeContext.Provider value={{darkMode, setDarkMode}}>
       <Rutas />
       </DarkModeContext.Provider>
